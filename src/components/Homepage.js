@@ -21,8 +21,10 @@ import resumeIcon from "../resources/social-icons/resume100x100.png";
 
 // Homepage animation
 import * as THREE from "three";
-import BIRDS from "vanta/dist/vanta.birds.min";
+// import BIRDS from "vanta/dist/vanta.birds.min";
 import FOG from "vanta/dist/vanta.fog.min";
+
+import resumePdf from "../resume.pdf";
 
 // import GLOBE from "vanta/dist/vanta.globe.min";
 // import { DataTexture2DArray } from "three";
@@ -165,11 +167,7 @@ function Homepage(props) {
                   <img src={linkedinIcon} alt="Linkedin" />
                 </div>
               </a>
-              <a
-                target="_blank"
-                rel="noreferrer"
-                href="https://instagram.com/dylansmi.th"
-              >
+              <a target="_blank" rel="noreferrer" href={resumePdf}>
                 <div className="front-icon">
                   <img src={resumeIcon} background-color="white" alt="Resume" />
                 </div>

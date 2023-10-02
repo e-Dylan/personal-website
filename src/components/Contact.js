@@ -6,6 +6,8 @@ import linkedinIcon from "../resources/social-icons/linkedin.svg";
 import githubIcon from "../resources/social-icons/github.svg";
 import resumeIcon from "../resources/social-icons/resume100x100.png";
 
+import resumePdf from "../resume.pdf";
+
 function Contact(props) {
   return (
     <div>
@@ -111,17 +113,17 @@ function Contact(props) {
                   className="connected-main-link"
                 >
                   <div className="front-icon">
-                    <img src={linkedinIcon} />
+                    <img alt="Linkedin" src={linkedinIcon} />
                   </div>
                 </a>
                 <a
                   target="_blank"
                   rel="noreferrer"
-                  href="https://instagram.com/dylansmi.th"
+                  href={resumePdf}
                   className="connected-main-link"
                 >
                   <div className="front-icon">
-                    <img src={resumeIcon} />
+                    <img alt="Resume" src={resumeIcon} />
                   </div>
                 </a>
                 <a
@@ -131,7 +133,7 @@ function Contact(props) {
                   className="connected-main-link"
                 >
                   <div className="front-icon">
-                    <img src={githubIcon} />
+                    <img alt="Github" src={githubIcon} />
                   </div>
                 </a>
               </div>
