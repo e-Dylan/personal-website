@@ -1,0 +1,78 @@
+.hidden {
+	opacity: 0;
+	pointer-events: none !important;
+}
+
+.project-display-window {
+	opacity: 1
+}
+
+.projects-section {
+	background-color: white;
+	// background-color: #222;
+}
+
+// Row of 3 highlighted project cards.
+
+// Media queries on small width
+.projects-container {
+	width: auto;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin-top: 30px;
+}
+
+@media screen and (max-width: 768px) {
+	.projects-container {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+}
+
+.a-button {
+	width: 20%;
+}
+
+.button-dark {
+	color: rgb(80, 80, 80);
+	border: 1px solid rgb(80, 80, 80);
+	border-radius: 2px;
+	background-color: white;
+	width: 100%;
+	height: 2rem;
+	transition: 100ms all ease-in-out;
+
+	&:hover {
+		background-color: rgb(70, 77, 94);
+		color: white;
+		transition: 100ms all ease-in-out;
+	}
+	&:focus {
+		outline: none;
+	}
+}
+
+.text-center, .centerX {
+	text-align: center;
+	justify-content: center;
+}
+.projects-buttons {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	margin-top: 50px;
+
+	a {
+		margin: 1.5rem;
+	}
+
+	button {
+		font-size: 16px;
+		font-family: "Ubuntu", sans-serif;
+	}
+}

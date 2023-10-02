@@ -1,0 +1,130 @@
+
+.project-card-outer-div {
+	display: inline-block;
+	position: relative;
+
+}
+
+.project-card {
+	// margin: 2px;
+	cursor: default;
+	text-align: center;
+	display: block;
+	text-decoration: none;
+	transition: 100ms all ease-in-out;
+	width: auto;
+	max-width: 400px;
+	z-index: 1;
+	// border-radius: 4px;
+	background-color: white;
+	color: rgba(22, 22, 22, 0.8);
+	// box-shadow: 0px 0px 12px 12px rgba(15, 15, 15, 0.2);
+	overflow: hidden;
+
+	&:hover {
+		transform: scale(1.05);
+	}
+}
+
+.project-image-container {
+	height: 80%;
+	transform: scale(1.0);
+	text-align: center;
+	color: rgba(219, 35, 81, 0.8);
+	font-size: 24px;
+	font-family: "Ubuntu", sans-serif;
+	font-weight: 600;
+
+	.overlay {
+		background-color: rgba(58, 58, 58, 0.9);
+		background-color: white;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		transition: 400ms opacity ease-in-out;
+		opacity: 0;
+	}
+
+	img {
+		width: 100%;
+		height: 100%;
+		display: block;
+	}
+	.project-titles {
+		position: absolute;
+		margin: 0 auto;
+		opacity: 0;
+		pointer-events: none;
+		width: 100%;
+		top: 0px;
+		left: 0px;
+		right: 0px;
+		transition: 400ms all ease-in-out;
+
+		.project-subtitle {
+			font-size: 16px;
+			font-weight: normal;
+			color: rgba(68, 68, 68, 0.8);
+			// color: white;
+		}
+	}
+	.image-button {
+		position: absolute;
+		margin: 0 auto;
+		opacity: 0;
+		display: inline-block;
+		box-sizing: inherit;
+
+		// pointer-events: none;
+		padding: 10px;
+		right: 20%;
+		left: 20%;
+		bottom: 0px;
+		height: auto;
+		transition: 400ms all ease-in-out;
+		border: 1px solid rgba(219, 35, 81, 0.8);
+		color: rgba(219, 35, 81, 0.8);
+
+		
+		&:hover {
+			color: white;
+			background-color: rgba(219, 35, 81, 0.8);
+		}
+
+		&:focus {
+			outline: none;
+		}
+	}
+
+	&:hover {
+		.project-titles, .image-button, .overlay {
+			opacity: 1;
+		}
+		.project-titles {
+			transform: translateY(120%);
+		}
+		.image-button {
+			transform: translateY(-200%);
+		}
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.project-card {
+		margin: 10px 0;
+		width: 100%;
+		height: auto;
+	}
+}
+
+.project-card-info {
+	margin-left: 5%;
+}
+
+.project-card-title {
+	font-size: 16px;
+}
+
+.project-card-category {
+	font-size: 13px;
+}
