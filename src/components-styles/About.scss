@@ -23,7 +23,7 @@
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
-  margin-bottom: 2rem;
+  margin-bottom: 65px;
 }
 
 .icon-wrapper {
@@ -212,6 +212,11 @@
           // width: 20%;
           margin-right: 10px;
           z-index: 1337;
+        }
+        .level-tag-highlight {
+          margin-right: 10px;
+          z-index: 1337;
+          color: rgb(229, 229, 229);
         }
       }
     }

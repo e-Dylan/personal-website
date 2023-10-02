@@ -8,7 +8,7 @@ import resumeIcon from "../resources/social-icons/resume100x100.png";
 
 import resumePdf from "../resume.pdf";
 
-function Contact(props) {
+const Contact = () => {
   return (
     <div>
       <svg
@@ -143,6 +143,6 @@ function Contact(props) {
       </div>
     </div>
   );
-}
+};
 
 export default Contact;

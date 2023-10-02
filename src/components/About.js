@@ -12,6 +12,7 @@ import mobileIcon from "../resources/about/about_icons/mobileIcon.png";
 // import portraitPhoto from '../resources/about/portrait_headshot_nyc.jpg';
 import portraitPhoto from "../resources/about/headshot.jpg";
 import { languageSkills } from "../languageSkills";
+import { Box } from "@chakra-ui/react";
 
 export const skillsItems = [
   "React",
@@ -31,36 +32,7 @@ export const skillsItems = [
   "Unity",
 ];
 
-const aboutAnimations = () => {
-  var skillItems = document.querySelectorAll(".skill-item");
-  window.removeEventListener("scroll", scrollFunction);
-  skillItems.forEach((item, index) => {
-    console.log("changing");
-    if (item.style.animation) item.style.animation = "";
-    else
-      item.style.animation = `aboutFadeFromTop 0.5s ease ${index / 21 + 0.1}s`;
-    setTimeout(() => {
-      item.style.display = "flex";
-      item.style.opacity = 1;
-      item.style.transform = `translateY(${0}%)`;
-    }, index / 25 + 0.07);
-  });
-};
-
-const scrollFunction = () => {
-  var pos = window.pageYOffset;
-  var topAbout = document.querySelector(".about-section").offsetTop - 300;
-  if (pos > topAbout) {
-    aboutAnimations();
-  }
-};
-
-function About(props) {
-  useEffect(() => {
-    // scroll event listener
-    window.addEventListener("scroll", scrollFunction);
-  }, []);
-
+const About = () => {
   return (
     <div className="container-center">
       <div className="section-title">
@@ -74,7 +46,7 @@ function About(props) {
           className="section-title-underline"
         ></div>
       </div>
-      <div className="about-icons">
+      <Box className="about-icons">
         <div
           className="icon-wrapper"
           data-aos="flip-right"
@@ -122,7 +94,7 @@ function About(props) {
             Android/iOS, React Native, Java, Kotlin
           </div>
         </div>
-      </div>
+      </Box>
 
       <div className="about-me-container">
         <div
@@ -135,9 +107,8 @@ function About(props) {
             <img src={portraitPhoto} />
             <div className="portrait-about-me-title">ABOUT ME</div>
             <div className="portrait-about-me" id="trigger-fade">
-              I'm a software engineer who thrives from creating new ideas and
-              constantly learning new things. I'm currently exploring machine
-              learning, full-stack development, and embedded systems.
+              I'm a full-stack software engineer who thrives from creating new
+              ideas and constantly learning new things.
             </div>
           </div>
         </div>
@@ -163,7 +134,13 @@ function About(props) {
                         {languageSkills[key].language}
                       </div>
                     </div>
-                    <span className="level-tag">
+                    <span
+                      className={
+                        languageSkills[key].percent !== "calc(100%)"
+                          ? "level-tag"
+                          : "level-tag-highlight"
+                      }
+                    >
                       {languageSkills[key].level}
                     </span>
                   </div>
@@ -187,12 +164,12 @@ function About(props) {
         </div>
       </div>
 
-      <div className="about-description">
+      {/* <div className="about-description">
         "I love to build things, and I love to learn about just about
         everything."
-      </div>
+      </div> */}
     </div>
   );
-}
+};
 
 export default About;
