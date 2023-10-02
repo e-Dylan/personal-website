@@ -78,57 +78,24 @@ $(document).ready(() => {
 const Nav = () => {
   return (
     <nav>
-      {/* <div className="nav-left">
-        <div
-          className="burger"
-          onClick={() => {
-            navSlide();
-          }}
-        >
-          <div className="line1"></div>
-          <div className="line2"></div>
-          <div className="line3"></div>
-        </div>
-      </div> */}
-
       <ul className="nav-links">
         <li>
-          <div
-            className="nav-link"
-            id="home-link"
-            dest="home"
-            onClick={setLinkActive.bind(this)}
-          >
+          <div className="nav-link" id="home-link" dest="home">
             Home
           </div>
         </li>
         <li>
-          <div
-            className="nav-link"
-            id="about-link"
-            dest="about"
-            onClick={setLinkActive.bind(this)}
-          >
+          <div className="nav-link" id="about-link" dest="about">
             About
           </div>
         </li>
         <li>
-          <div
-            className="nav-link"
-            id="projects-link"
-            dest="projects"
-            onClick={setLinkActive.bind(this)}
-          >
+          <div className="nav-link" id="projects-link" dest="projects">
             Projects
           </div>
         </li>
         <li>
-          <div
-            className="nav-link"
-            id="contact-link"
-            dest="contact"
-            onClick={setLinkActive.bind(this)}
-          >
+          <div className="nav-link" id="contact-link" dest="contact">
             Contact
           </div>
         </li>
