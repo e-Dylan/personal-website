@@ -90,7 +90,11 @@ const Contact = () => {
               data-aos-duration="1000"
               data-aos-delay="200"
               data-aos-anchor=".contact-area"
-              style={{ "margin-top": "10px" }}
+              style={{
+                "margin-top": "10px",
+                display: "flex",
+                "text-align": "center",
+              }}
             >
               <Box
                 as="a"
