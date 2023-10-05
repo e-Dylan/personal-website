@@ -38,13 +38,7 @@ function Projects(props) {
 
         <div className="projects-container">
           {Object.keys(projects).map((key, index) => {
-            return (
-              <ProjectCard
-                className="project-card"
-                href="/projects"
-                project={projects[key]}
-              />
-            );
+            return <ProjectCard project={projects[key]} />;
           })}
         </div>
       </ProjectContext.Provider>

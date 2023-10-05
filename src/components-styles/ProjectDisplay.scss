@@ -1,196 +1,191 @@
-
-
 .project-display-bg {
-	background-color: rgba(15, 15, 15, 0.233);
-	pointer-events: auto;
-	position: fixed;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-	z-index: 5;
-	transition: 200ms all ease-in-out;
+  background-color: rgba(15, 15, 15, 0.233);
+  pointer-events: auto;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  transition: 200ms all ease-in-out;
 }
 
 .project-display-container {
-	position: fixed;
-	width: 80%;
-	height: auto;
-	max-width: 1500px;
-	max-height: 800px;
-	pointer-events: auto;
-	background-color: white;
-	box-shadow: 0px 0px 12px 12px rgba(15, 15, 15, 0.2);
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	transition: 200ms all ease-in-out;
-	z-index: 5;
+  position: fixed;
+  width: 80%;
+  height: auto;
+  max-width: 1500px;
+  max-height: 800px;
+  pointer-events: auto;
+  background-color: white;
+  box-shadow: 0px 0px 12px 12px rgba(15, 15, 15, 0.2);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 200ms all ease-in-out;
+  z-index: 5;
 
-	&:focus {
-		outline: none;
-	}
+  &:focus {
+    outline: none;
+  }
 }
 
 .project-display {
-	display: flex;
-	flex-direction: row;
-	height: 100%;
-	width: 100%;
-	align-items: center;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+  align-items: center;
 }
 
 .image-col {
-	display: column;
-	width: 60%;
-	height: 100%;
+  display: column;
+  width: 60%;
+  height: 100%;
 
-	img {
-		width: 100%;
-		height: auto;
-		display: block;
-		height: auto;
-	}
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+    height: auto;
+  }
 
-	.project-image {
-		img {
-			width: 100%;
-			height: auto;
-		}
-	}
+  .project-image {
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
 }
 
 .text-section {
-	margin-bottom: 30px;
+  margin-bottom: 30px;
 }
 
 .info-col {
-	display: flex;
-	flex-direction: column;
-	width: 40%;
-	height: 100%;
-	margin: 0px 30px 0px 30px;
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  height: 100%;
+  margin: 0px 30px 0px 30px;
 
-	.project-info {
-		display: flex;
-		flex-direction: column;
-		font-family: "Ubuntu", sans-serif;
+  .project-info {
+    display: flex;
+    flex-direction: column;
+    font-family: "Ubuntu", sans-serif;
 
-		.title {
-			.project-title {
-				font-size: 22px;
-				margin-top: 10px;
-			}
-			.project-category {
-				font-weight: bold;
-				color: rgb(211, 55, 94);
-				margin-top: 10px;
-				font-size: 16px;
-			}
-			.project-date {
-				font-size: 14px;
-				margin-top: 10px;
-			}
-		}
-		.description {
-			margin: 26px;
-			margin-bottom: 46px;
-		}
+    .title {
+      .project-title {
+        font-size: 22px;
+        margin-top: 10px;
+      }
+      .project-category {
+        font-weight: bold;
+        color: rgb(211, 55, 94);
+        margin-top: 10px;
+        font-size: 16px;
+      }
+      .project-date {
+        font-size: 14px;
+        margin-top: 10px;
+      }
+    }
+    .description {
+      margin: 26px;
+      margin-bottom: 46px;
+    }
 
-		.tech {
-			font-size: 16px;
-	
-			.project-tech {
-				font-size: 14px;
-				color: rgb(211, 55, 94);
-			}
-		}
-		
-		.project-buttons {
-			display: flex;
-			flex-direction: row;
-			justify-content: space-between;
-			margin-top: 40px;
+    .tech {
+      font-size: 16px;
 
-			.project-button {
-				border-radius: 3px;
-				cursor: pointer;
-				padding: 0.4rem 0.4rem;
-				font-size: 16px;
-				text-decoration: none;
-				border: 1px solid rgb(211, 55, 94);
-				text-align: center;
-				color: rgb(44, 44, 44);
-				width: 30%;
-				transition: 100ms all ease-in-out;
+      .project-tech {
+        font-size: 14px;
+        color: rgb(211, 55, 94);
+      }
+    }
 
-				&:hover {
-					background-color: rgb(211, 55, 94);
-					color: white;
-				}
-			}
-			
-		}
-	}
+    .project-buttons {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      margin-top: 40px;
+
+      .project-button {
+        border-radius: 3px;
+        cursor: pointer;
+        padding: 0.4rem 0.4rem;
+        font-size: 16px;
+        text-decoration: none;
+        border: 1px solid rgb(211, 55, 94);
+        text-align: center;
+        color: rgb(44, 44, 44);
+        width: 30%;
+        transition: 100ms all ease-in-out;
+
+        &:hover {
+          background-color: rgb(211, 55, 94);
+          color: white;
+        }
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 1120px) {
-	// flip to vertical ProjectDisplay container, img on top.
-	.project-display-container {
-		width: 77%;
-		height: auto;
-		max-width: 700px;
-		max-height: 800px;
-	}
+  // flip to vertical ProjectDisplay container, img on top.
+  .project-display-container {
+    width: 77%;
+    height: auto;
+    max-width: 700px;
+    max-height: 800px;
+  }
 
-	.project-display {
-		display: flex;
-		flex-direction: column;
-	}
-	
-	.image-col {
-		width: 100%;
-		height: 100%;
-	
-		img {
-			width: 100%;
-		}
-	}
+  .project-display {
+    display: flex;
+    flex-direction: column;
+  }
 
-	.info-col {
-		width: 85%;
-		height: 100%;
-		margin: 20px;
-	
-		.project-info {
-	
-			.title {
-				margin-bottom: 10px;
-				.project-title {
-					font-size: 22px;
-					margin-bottom: 12px;
-				}
-				.project-category {
-					font-size: 16px;
-				}
-			}
-			.description {
-				margin: 16px;
-				margin-bottom: 26px;
-			}
-	
-			.tech {
-				font-size: 16px;
-		
-				.project-tech {
-					font-size: 14px;
-				}
-			}
-			
-			.project-buttons {
-				margin-top: 20px;;
-			}
+  .image-col {
+    width: 100%;
+    height: 100%;
 
-		}
-	}
+    img {
+      width: 100%;
+    }
+  }
+
+  .info-col {
+    width: 85%;
+    height: 100%;
+    margin: 20px;
+
+    .project-info {
+      .title {
+        margin-bottom: 10px;
+        .project-title {
+          font-size: 22px;
+          margin-bottom: 12px;
+        }
+        .project-category {
+          font-size: 16px;
+        }
+      }
+      .description {
+        margin: 16px;
+        margin-bottom: 26px;
+      }
+
+      .tech {
+        font-size: 16px;
+
+        .project-tech {
+          font-size: 14px;
+        }
+      }
+
+      .project-buttons {
+        margin-top: 20px;
+      }
+    }
+  }
 }
