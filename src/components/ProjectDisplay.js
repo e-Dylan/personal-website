@@ -52,9 +52,23 @@ function ProjectDisplay(props) {
               </div>
 
               <div className="project-buttons">
-                {value.seeLive && <a className="project-button">See Live</a>}
+                {value.seeLive && (
+                  <a
+                    className="project-button"
+                    href={value.seeLive}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    See Live
+                  </a>
+                )}
                 {value.github && (
-                  <a className="project-button" href={value.github}>
+                  <a
+                    className="project-button"
+                    href={value.github}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     Github
                   </a>
                 )}
