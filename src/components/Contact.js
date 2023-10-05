@@ -7,7 +7,7 @@ import githubIcon from "../resources/social-icons/github.svg";
 import resumeIcon from "../resources/social-icons/resume100x100.png";
 
 import resumePdf from "../resume.pdf";
-import { Box, Button } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 
 const Contact = () => {
   return (
@@ -53,35 +53,12 @@ const Contact = () => {
               data-aos-delay="50"
               data-aos-anchor=".contact-area"
             >
-              <Box
-                w="100%"
-                textDecor="none"
-                color="black"
-                bg="white"
-                p="16px"
-                rounded="10px"
-                ml="10px"
-                as="a"
-                target="_blank"
-                rel="noreferrer"
-                href="mailto:dylan@alignsoft.ca"
-              >
-                Send me an email!
-              </Box>
-              {/* <Button
-                as="a"
-                href="mailto:dylan@alignsoft.ca"
-                bg="white"
-                rounded="4px"
-                textDecor="none"
-                color="black"
-                p="16px"
-                w="100%"
-              >
-                Send me an email!
-              </Button> */}
+              <input
+                className="contact-input"
+                placeholder="Enter your name"
+              ></input>
             </div>
-            {/* <div
+            <div
               className="anim-div"
               data-aos="fade-right"
               data-aos-duration="1000"
@@ -113,9 +90,16 @@ const Contact = () => {
               data-aos-duration="1000"
               data-aos-delay="200"
               data-aos-anchor=".contact-area"
+              style={{ "margin-top": "10px" }}
             >
-              <button className="submit-button">Submit</button>
-            </div> */}
+              <Box
+                as="a"
+                href="mailto:dylan@alignsoft.ca"
+                className="submit-button"
+              >
+                Email me!
+              </Box>
+            </div>
           </div>
           <div
             className="my-info"
