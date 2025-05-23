@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 // import scrollFunction from './Homepage';
 
@@ -9,8 +9,7 @@ import fullstackIcon from "../resources/about/about_icons/fullstackIcon.png";
 import embeddedIcon from "../resources/about/about_icons/embeddedIcon.png";
 import mobileIcon from "../resources/about/about_icons/mobileIcon.png";
 
-// import portraitPhoto from '../resources/about/portrait_headshot_nyc.jpg';
-import portraitPhoto from "../resources/about/headshot.jpg";
+import portraitPhoto from "../resources/about/headshot_2.png";
 import { languageSkills } from "../languageSkills";
 import { Box } from "@chakra-ui/react";
 
