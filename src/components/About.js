@@ -9,7 +9,7 @@ import fullstackIcon from "../resources/about/about_icons/fullstackIcon.png";
 import embeddedIcon from "../resources/about/about_icons/embeddedIcon.png";
 import mobileIcon from "../resources/about/about_icons/mobileIcon.png";
 
-import portraitPhoto from "../resources/about/headshot_2.png";
+import portraitPhoto from "../resources/about/headshot_med.png";
 import { languageSkills } from "../languageSkills";
 import { Box } from "@chakra-ui/react";
 
