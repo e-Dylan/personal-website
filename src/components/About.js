@@ -148,7 +148,7 @@ const About = () => {
             </div>
           </div>
 
-          <div className="skills">
+          {/* <div className="skills">
             <div className="skills-title">Skills</div>
             <div className="skills-items">
               {skillsItems.map((item) => {
@@ -159,7 +159,7 @@ const About = () => {
                 );
               })}
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
 

@@ -14,17 +14,17 @@ const projects = {
     date: "2021 - 2022",
     seeLive: "https://www.vlm.cem.va.gov",
   },
-  waygo: {
-    title: "Waygo Navigation App",
-    image: waygoThumbnail,
-    category: "Web/Mobile App",
-    tech: "React, NodeJS, SCSS, MySQL, REST API",
-    description:
-      "Waygo is a navigation app allowing users to plan optimal routes, visualize traffic, find nearby transit, and much more.",
-    date: "06/12/2020 - Current",
-    github: "https://github.com/e-Dylan/waygo",
-    seeLive: "https://waygo.vercel.app/live-map",
-  },
+  // waygo: {
+  //   title: "Waygo Navigation App",
+  //   image: waygoThumbnail,
+  //   category: "Web/Mobile App",
+  //   tech: "React, NodeJS, SCSS, MySQL, REST API",
+  //   description:
+  //     "Waygo is a navigation app allowing users to plan optimal routes, visualize traffic, find nearby transit, and much more.",
+  //   date: "06/12/2020 - Current",
+  //   github: "https://github.com/e-Dylan/waygo",
+  //   seeLive: "https://waygo.vercel.app/live-map",
+  // },
   faceGenerator: {
     title: "Face Generation Neural Network",
     image: faceGeneratorThumbnail,
