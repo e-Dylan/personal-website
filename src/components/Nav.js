@@ -49,28 +49,28 @@ $(document).ready(() => {
   $("#home-link").click((event) => {
     $("html, body").animate(
       { scrollTop: $(".home-section").offset().top },
-      "slow"
+      "slow",
     );
   });
 
   $("#about-link").click((event) => {
     $("html, body").animate(
       { scrollTop: $(".about-section").offset().top },
-      "slow"
+      "slow",
     );
   });
 
   $("#projects-link").click((event) => {
     $("html, body").animate(
       { scrollTop: $(".projects-section").offset().top },
-      "slow"
+      "slow",
     );
   });
 
   $("#contact-link").click((event) => {
     $("html, body").animate(
       { scrollTop: $(".contact-section").offset().top },
-      "slow"
+      "slow",
     );
   });
 });
@@ -96,7 +96,7 @@ const Nav = () => {
         </li>
         <li>
           <div className="nav-link" id="contact-link" dest="contact">
-            Contact
+            Stay Connected
           </div>
         </li>
       </ul>

@@ -25,19 +25,19 @@ const Contact = () => {
       </svg>
       <div className="container-center">
         <div className="section-title" id="contact-section-title">
-          <div data-aos="zoom-in-right" data-aos-duration="600">
+          {/* <div data-aos="zoom-in-right" data-aos-duration="600">
             CONTACT ME
-          </div>
-          <div
+          </div> */}
+          {/* <div
             className="section-title-underline"
             data-aos="zoom-in-right"
             data-aos-duration="600"
             data-aos-delay="200"
-          ></div>
+          ></div> */}
         </div>
 
         <div className="contact-area">
-          <div className="contact-form">
+          {/* <div className="contact-form">
             <div
               className="form-header"
               data-aos="slide-right"
@@ -104,7 +104,7 @@ const Contact = () => {
                 Email me!
               </Box>
             </div>
-          </div>
+          </div> */}
           <div
             className="my-info"
             data-aos="slide-up"

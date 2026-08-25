@@ -105,7 +105,7 @@ function Homepage(props) {
           gyroControls: false,
           minHeight: 200.0,
           minWidth: 200.0,
-        })
+        }),
         // BIRDS({
         //   el: myRef.current,
         //   THREE: THREE,
@@ -148,7 +148,7 @@ function Homepage(props) {
         <div className="parallax-image" ref={myRef}>
           <div className="image-section-container center">
             <div className="hello-text">
-              Hello, I'm
+              Hi, I'm
               <span className="hello-text highlight"> Dylan</span>.
             </div>
 
