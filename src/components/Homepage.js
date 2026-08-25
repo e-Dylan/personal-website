@@ -9,6 +9,7 @@ import "../components-styles/Homepage.scss";
 import "../components-styles/About.scss";
 import "../components-styles/Projects.scss";
 
+import ConstellationBackground from "./ConstellationBackground";
 import Nav from "../components/Nav";
 import About from "../components/About";
 import Projects from "../components/Projects";
@@ -18,11 +19,6 @@ import linkedinIcon from "../resources/social-icons/linkedin.svg";
 import githubIcon from "../resources/social-icons/github.svg";
 // import instagramIcon from "../resources/social-icons/instagram.svg";
 import resumeIcon from "../resources/social-icons/resume100x100.png";
-
-// Homepage animation
-import * as THREE from "three";
-// import BIRDS from "vanta/dist/vanta.birds.min";
-import FOG from "vanta/dist/vanta.fog.min";
 
 import resumePdf from "../resume.pdf";
 
@@ -78,8 +74,7 @@ const erase = () => {
   }
 };
 
-function Homepage(props) {
-  const [vantaEffect, setVantaEffect] = useState(0);
+function Homepage() {
   const myRef = useRef(null);
 
   useEffect(() => {
@@ -94,98 +89,58 @@ function Homepage(props) {
       easing: "ease-in-out-sine",
     });
     AOS.refresh();
-
-    if (!vantaEffect) {
-      setVantaEffect(
-        FOG({
-          el: myRef.current,
-          THREE: THREE,
-          mouseControls: false,
-          touchControls: false,
-          gyroControls: false,
-          minHeight: 200.0,
-          minWidth: 200.0,
-        }),
-        // BIRDS({
-        //   el: myRef.current,
-        //   THREE: THREE,
-        //   point: 1,
-        //   spacing: 17,
-        //   mouseControls: true,
-        //   colorMode: "lerp",
-        //   color1: 0xffffff,
-        //   color2: 0xff3f81,
-        //   backgroundColor: 0xdcdcdc,
-        //   scaleMobile: 0.8,
-        //   quantity: 3,
-        //   speedLimit: 5,
-        //   separation: 60,
-        //   alignment: 10,
-        //   cohesion: 24,
-        // }),
-        // GLOBE({
-        //   el: myRef.current,
-        //   THREE: THREE,
-        //   point: 2,
-        //   spacing: 17,
-        //   mouseControls: true,
-        //   color: 0xdcdcdc,
-        //   color2: 0xff3f81,
-        //   color3: 0xeeeeee,
-        //   backgroundColor: 0x30303c,
-        //   scaleMobile: 0.8,
-        // })
-      );
-    }
-    return () => {
-      if (vantaEffect) vantaEffect.destroy();
-    };
-  }, [vantaEffect]);
+  }, []);
 
   return (
     <div className="homepage">
-      <section className="home-section">
-        <div className="parallax-image" ref={myRef}>
-          <div className="image-section-container center">
-            <div className="hello-text">
-              Hi, I'm
-              <span className="hello-text highlight"> Dylan</span>.
-            </div>
+      <ConstellationBackground>
+        <section className="home-section">
+          <div className="parallax-image" ref={myRef}>
+            <div className="image-section-container center">
+              <div className="hello-text">
+                Hi, I'm
+                <span className="hello-text highlight"> Dylan</span>.
+              </div>
 
-            <br />
-            <div className="hello-text">
-              I'm a<span className="typed-text highlight"> </span>
-              <span className="caret">&nbsp;</span>.
+              <br />
+              <div className="hello-text">
+                I'm a<span className="typed-text highlight"> </span>
+                <span className="caret">&nbsp;</span>.
+              </div>
+              <div className="main-links">
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://linkedin.com/in/dylan-smith-5b2b971b8"
+                >
+                  <div className="front-icon">
+                    <img src={linkedinIcon} alt="Linkedin" />
+                  </div>
+                </a>
+                <a target="_blank" rel="noreferrer" href={resumePdf}>
+                  <div className="front-icon">
+                    <img
+                      src={resumeIcon}
+                      background-color="white"
+                      alt="Resume"
+                    />
+                  </div>
+                </a>
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://github.com/e-Dylan"
+                >
+                  <div className="front-icon">
+                    <img src={githubIcon} alt="Github" />
+                  </div>
+                </a>
+              </div>
             </div>
-            <div className="main-links">
-              <a
-                target="_blank"
-                rel="noreferrer"
-                href="https://linkedin.com/in/dylan-smith-5b2b971b8"
-              >
-                <div className="front-icon">
-                  <img src={linkedinIcon} alt="Linkedin" />
-                </div>
-              </a>
-              <a target="_blank" rel="noreferrer" href={resumePdf}>
-                <div className="front-icon">
-                  <img src={resumeIcon} background-color="white" alt="Resume" />
-                </div>
-              </a>
-              <a
-                target="_blank"
-                rel="noreferrer"
-                href="https://github.com/e-Dylan"
-              >
-                <div className="front-icon">
-                  <img src={githubIcon} alt="Github" />
-                </div>
-              </a>
-            </div>
+            {/* <ProjectDisplay /> testing */}
           </div>
-          {/* <ProjectDisplay /> testing */}
-        </div>
-      </section>
+        </section>
+      </ConstellationBackground>
 
       <section className="navbar-section">
         <Nav />
