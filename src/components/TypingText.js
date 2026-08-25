@@ -11,9 +11,9 @@ const WORDS = [
   "machine learning developer.",
 ];
 
-const TYPING_SPEED = 70;
+const TYPING_SPEED = 90;
 const TYPING_JITTER = 0;
-const ERASING_SPEED = 35;
+const ERASING_SPEED = 50;
 const ERASING_JITTER = 0;
 const HOLD_DURATION = 1800;
 

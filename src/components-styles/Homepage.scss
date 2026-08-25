@@ -179,7 +179,7 @@
   overflow-y: hidden;
 }
 
-// Constellations bg
+// CONSTELLATION BACKGROUND HOMEPAGE
 .constellation-bg {
   position: relative;
   min-height: 100vh;
@@ -224,3 +224,15 @@
 @media (prefers-reduced-motion: reduce) {
   .constellation-bg__gradient { animation: none; }
 }
+
+
+// FOR 3D
+
+// .constellation-bg__canvas {
+//   position: absolute;
+//   inset: 0;
+//   z-index: 1;
+// }
+// .constellation-bg__canvas canvas {
+//   display: block;
+// }

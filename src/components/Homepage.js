@@ -3,7 +3,6 @@ import { useEffect, useRef } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-import aboutAnimations from "./About";
 import TypingText from "./TypingText";
 
 import "../components-styles/Homepage.scss";
@@ -11,6 +10,8 @@ import "../components-styles/About.scss";
 import "../components-styles/Projects.scss";
 
 import ConstellationBackground from "./ConstellationBackground";
+// import ConstellationBackground3d from "./ConstellationBackground3d";
+
 import Nav from "../components/Nav";
 import About from "../components/About";
 import Projects from "../components/Projects";
