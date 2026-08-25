@@ -23,7 +23,7 @@ const projects = {
       "Waygo is a navigation app allowing users to plan optimal routes, visualize traffic, find nearby transit, and much more.",
     date: "06/12/2020 - Current",
     github: "https://github.com/e-Dylan/waygo",
-    seeLive: "https://waygo.vercel.app",
+    seeLive: "https://waygo.vercel.app/live-map",
   },
   faceGenerator: {
     title: "Face Generation Neural Network",
