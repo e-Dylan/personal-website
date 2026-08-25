@@ -81,6 +81,15 @@
   }
 }
 
+.hello-text {
+  min-height: 1.5em; /* reserve vertical space so line-height doesn't jump */
+}
+
+.caret {
+  display: inline-block;
+  width: 1px; /* consistent width regardless of font metrics */
+}
+
 @keyframes blink {
   0% {
     // background-color: #ccc;

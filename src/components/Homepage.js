@@ -1,9 +1,10 @@
-import React, { useEffect, useState, useRef } from "react";
+import { useEffect, useRef } from "react";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
 
 import aboutAnimations from "./About";
+import TypingText from "./TypingText";
 
 import "../components-styles/Homepage.scss";
 import "../components-styles/About.scss";
@@ -22,65 +23,10 @@ import resumeIcon from "../resources/social-icons/resume100x100.png";
 
 import resumePdf from "../resume.pdf";
 
-// import GLOBE from "vanta/dist/vanta.globe.min";
-// import { DataTexture2DArray } from "three";
-
-const pronounsArr = [
-  "software engineer",
-  "creator",
-  "student",
-  "programmer",
-  "n innovator",
-  "full-stack developer",
-  "life-long learner",
-  "machine learning developer",
-];
-const typingDelay = 250;
-const erasingDelay = 200;
-const newTextDelay = 2000; // delay to begin new text
-var wordIdx = ~~(Math.random() * pronounsArr.length);
-var charIdx = 0;
-
-const type = () => {
-  const typedTextSpan = document.querySelector(".typed-text");
-  const caretSpan = document.querySelector(".caret");
-
-  if (charIdx < pronounsArr[wordIdx].length) {
-    if (!caretSpan.classList.contains("typing"))
-      caretSpan.classList.add("typing");
-    typedTextSpan.innerHTML += pronounsArr[wordIdx].charAt(charIdx);
-    charIdx++;
-    setTimeout(type, typingDelay);
-  } else {
-    caretSpan.classList.remove("typing");
-    setTimeout(erase, newTextDelay);
-  }
-};
-
-const erase = () => {
-  const typedTextSpan = document.querySelector(".typed-text");
-  const caretSpan = document.querySelector(".caret");
-
-  if (charIdx > 0) {
-    typedTextSpan.innerHTML =
-      " " + pronounsArr[wordIdx].substring(0, charIdx - 1);
-    charIdx--;
-    setTimeout(erase, erasingDelay);
-  } else {
-    caretSpan.classList.remove("typing");
-    wordIdx++;
-    if (wordIdx >= pronounsArr.length) wordIdx = 0;
-    setTimeout(type, typingDelay + 100);
-  }
-};
-
 function Homepage() {
   const myRef = useRef(null);
 
   useEffect(() => {
-    // initialize typing effect
-    if (pronounsArr.length) setTimeout(type, newTextDelay + 250);
-
     AOS.init({
       offset: 400,
       duration: 700,
@@ -104,8 +50,7 @@ function Homepage() {
 
               <br />
               <div className="hello-text">
-                I'm a<span className="typed-text highlight"> </span>
-                <span className="caret">&nbsp;</span>.
+                I'm a<TypingText />
               </div>
               <div className="main-links">
                 <a
