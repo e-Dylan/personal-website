@@ -1,0 +1,24 @@
+// Shared color palette for all components except Homepage (which keeps its own scheme).
+// Anchored to the navy + rose tones already established on Homepage so the rest of
+// the site reads as one consistent system instead of six slightly-different pinks.
+
+// Navy / ink (dark backgrounds & dark text)
+$navy-900: #14161f; // deepest panels (nested cards inside dark sections)
+$navy-800: #1a1e2b; // Contact section background
+$navy-700: #262a3b; // Nav background
+$navy-600: #323849; // mid navy — matches Homepage's icon/text color
+$navy-500: #4b5268; // slate — secondary dark accents, hover states
+$navy-400: #6b7280; // muted navy-gray — secondary text, borders
+
+// Rose / accent (unifies the previous six near-identical pinks)
+$rose-600: #c81e56; // deep accent
+$rose-500: #db2f68; // primary accent — buttons, links, highlights
+$rose-400: #e8577f; // hover / lighter accent
+$rose-300: #f2a4bb; // subtle tags, light hover backgrounds
+
+// Neutrals
+$white: #ffffff;
+$off-white: #f7f7f9;
+$ink: #1f2430; // body text on light backgrounds
+$gray-400: #9296a1;
+$gray-200: #e4e4e8;
