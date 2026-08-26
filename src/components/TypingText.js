@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 const WORDS = [
   "software engineer.",
   "creator.",
-  "student.",
+  // "student.",
   "programmer.",
   "n innovator.",
   "full-stack developer.",
