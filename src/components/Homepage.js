@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useRef } from "react";
 
 import AOS from "aos";
@@ -17,12 +19,12 @@ import About from "../components/About";
 import Projects from "../components/Projects";
 import Contact from "../components/Contact";
 
-import linkedinIcon from "../resources/social-icons/linkedin.svg";
-import githubIcon from "../resources/social-icons/github.svg";
-// import instagramIcon from "../resources/social-icons/instagram.svg";
-import resumeIcon from "../resources/social-icons/resume100x100.png";
+const linkedinIcon = "/resources/social-icons/linkedin.svg";
+const githubIcon = "/resources/social-icons/github.svg";
+// const instagramIcon = "/resources/social-icons/instagram.svg";
+const resumeIcon = "/resources/social-icons/resume100x100.png";
 
-import resumePdf from "../resume.pdf";
+const resumePdf = "/resume.pdf";
 
 function Homepage() {
   const myRef = useRef(null);
@@ -45,13 +47,13 @@ function Homepage() {
           <div className="parallax-image" ref={myRef}>
             <div className="image-section-container center">
               <div className="hello-text">
-                Hi, I'm
+                Hi, I&apos;m
                 <span className="hello-text highlight"> Dylan</span>.
               </div>
 
               <br />
               <div className="hello-text">
-                I'm a<TypingText />
+                I&apos;m a<TypingText />
               </div>
               <div className="main-links">
                 <a

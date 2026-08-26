@@ -1,5 +1,6 @@
+"use client";
+
 import { React, useState, useContext } from "react";
-import { Link } from "react-router-dom";
 
 import { ProjectContext } from "../contexts/ProjectContext";
 
@@ -23,7 +24,12 @@ function ProjectDisplay(props) {
   const { value, setValue } = useContext(ProjectContext);
 
   return (
-    <div className="project-display-bg hidden">
+    <div
+      className="project-display-bg hidden"
+      onMouseUp={(e) => {
+        if (e.target === e.currentTarget) hideProjectDisplay();
+      }}
+    >
       <div
         className="project-display-container hidden"
         tabIndex="1"

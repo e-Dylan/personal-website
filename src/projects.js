@@ -1,7 +1,7 @@
-import vlmThumbnail from "./resources/project_thumbnails/vlm-thumbnail.png";
-import waygoThumbnail from "./resources/project_thumbnails/waygo-thumbnail.png";
-import speednetThumbnail from "./resources/project_thumbnails/ezgif-55473abd8ed74a19.gif";
-import faceGeneratorThumbnail from "./resources/project_thumbnails/face-generator-thumbnail.gif";
+const vlmThumbnail = "/resources/project_thumbnails/vlm-thumbnail.png";
+const waygoThumbnail = "/resources/project_thumbnails/waygo-thumbnail.png";
+const speednetThumbnail = "/resources/project_thumbnails/ezgif-55473abd8ed74a19.gif";
+const faceGeneratorThumbnail = "/resources/project_thumbnails/face-generator-thumbnail.gif";
 
 const projects = {
   vlm: {

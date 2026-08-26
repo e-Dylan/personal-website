@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useRef, useState } from "react";
 
 const WORDS = [
@@ -21,7 +23,9 @@ function TypingText() {
   const [text, setText] = useState("");
   const [phase, setPhase] = useState("typing"); // only drives the caret's CSS class
 
-  const wordIdxRef = useRef(Math.floor(Math.random() * WORDS.length));
+  // Starts at a fixed index so server and client render the same markup on
+  // first paint (Math.random() here would desync SSR/hydration output).
+  const wordIdxRef = useRef(0);
   const charCountRef = useRef(0); // source of truth for how many chars are shown
   const phaseRef = useRef("typing"); // source of truth for typing/erasing logic
   const lastStepRef = useRef(0);
@@ -29,6 +33,9 @@ function TypingText() {
   const holdUntilRef = useRef(0);
 
   useEffect(() => {
+    // Randomize the starting word on the client only, after hydration.
+    wordIdxRef.current = Math.floor(Math.random() * WORDS.length);
+
     let rafId;
 
     function step(timestamp) {

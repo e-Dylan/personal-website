@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from "react";
 
 import { ProjectContext } from "../contexts/ProjectContext";
@@ -10,8 +12,9 @@ import ProjectDisplay from "../components/ProjectDisplay";
 
 import projects from "../projects";
 
-import githubIcon from "../resources/social-icons/github.svg";
 import { Box, Flex, Text } from "@chakra-ui/layout";
+
+const githubIcon = "/resources/social-icons/github.svg";
 
 function Projects(props) {
   const [value, setValue] = useState("one");
@@ -37,8 +40,8 @@ function Projects(props) {
         </div>
 
         <div className="projects-container">
-          {Object.keys(projects).map((key, index) => {
-            return <ProjectCard project={projects[key]} />;
+          {Object.keys(projects).map((key) => {
+            return <ProjectCard project={projects[key]} key={key} />;
           })}
         </div>
       </ProjectContext.Provider>

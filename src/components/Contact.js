@@ -1,13 +1,16 @@
+"use client";
+
 import React from "react";
 
 import "../components-styles/Contact.scss";
 
-import linkedinIcon from "../resources/social-icons/linkedin.svg";
-import githubIcon from "../resources/social-icons/github.svg";
-import resumeIcon from "../resources/social-icons/resume100x100.png";
-
-import resumePdf from "../resume.pdf";
 import { Box } from "@chakra-ui/react";
+
+const linkedinIcon = "/resources/social-icons/linkedin.svg";
+const githubIcon = "/resources/social-icons/github.svg";
+const resumeIcon = "/resources/social-icons/resume100x100.png";
+
+const resumePdf = "/resume.pdf";
 
 const Contact = () => {
   return (

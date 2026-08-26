@@ -1,6 +1,6 @@
-import React from "react";
+"use client";
 
-import $ from "jquery";
+import React from "react";
 
 import "../App.css";
 import "../components-styles/Nav.scss";
@@ -45,57 +45,52 @@ function setLinkActive(e) {
   //   navSlide();
 }
 
-$(document).ready(() => {
-  $("#home-link").click((event) => {
-    $("html, body").animate(
-      { scrollTop: $(".home-section").offset().top },
-      "slow",
-    );
-  });
-
-  $("#about-link").click((event) => {
-    $("html, body").animate(
-      { scrollTop: $(".about-section").offset().top },
-      "slow",
-    );
-  });
-
-  $("#projects-link").click((event) => {
-    $("html, body").animate(
-      { scrollTop: $(".projects-section").offset().top },
-      "slow",
-    );
-  });
-
-  $("#contact-link").click((event) => {
-    $("html, body").animate(
-      { scrollTop: $(".contact-section").offset().top },
-      "slow",
-    );
-  });
-});
+function scrollToSection(sectionClass) {
+  const el = document.querySelector(`.${sectionClass}`);
+  if (el) el.scrollIntoView({ behavior: "smooth" });
+}
 
 const Nav = () => {
   return (
     <nav>
       <ul className="nav-links">
         <li>
-          <div className="nav-link" id="home-link" dest="home">
+          <div
+            className="nav-link"
+            id="home-link"
+            dest="home"
+            onClick={() => scrollToSection("home-section")}
+          >
             Home
           </div>
         </li>
         <li>
-          <div className="nav-link" id="about-link" dest="about">
+          <div
+            className="nav-link"
+            id="about-link"
+            dest="about"
+            onClick={() => scrollToSection("about-section")}
+          >
             About
           </div>
         </li>
         <li>
-          <div className="nav-link" id="projects-link" dest="projects">
+          <div
+            className="nav-link"
+            id="projects-link"
+            dest="projects"
+            onClick={() => scrollToSection("projects-section")}
+          >
             Projects
           </div>
         </li>
         <li>
-          <div className="nav-link" id="contact-link" dest="contact">
+          <div
+            className="nav-link"
+            id="contact-link"
+            dest="contact"
+            onClick={() => scrollToSection("contact-section")}
+          >
             Stay Connected
           </div>
         </li>

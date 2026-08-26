@@ -1,17 +1,20 @@
+"use client";
+
 import React from "react";
 
 // import scrollFunction from './Homepage';
 
 import "../components-styles/About.scss";
 
-import mlIcon from "../resources/about/about_icons/mlIcon.png";
-import fullstackIcon from "../resources/about/about_icons/fullstackIcon.png";
-import embeddedIcon from "../resources/about/about_icons/embeddedIcon.png";
-import mobileIcon from "../resources/about/about_icons/mobileIcon.png";
-
-import portraitPhoto from "../resources/about/headshot_med.png";
 import { languageSkills } from "../languageSkills";
 import { Box } from "@chakra-ui/react";
+
+const mlIcon = "/resources/about/about_icons/mlIcon.png";
+const fullstackIcon = "/resources/about/about_icons/fullstackIcon.png";
+const embeddedIcon = "/resources/about/about_icons/embeddedIcon.png";
+const mobileIcon = "/resources/about/about_icons/mobileIcon.png";
+
+const portraitPhoto = "/resources/about/headshot_med.png";
 
 export const skillsItems = [
   "React",
@@ -106,7 +109,7 @@ const About = () => {
             <img src={portraitPhoto} />
             <div className="portrait-about-me-title">ABOUT ME</div>
             <div className="portrait-about-me" id="trigger-fade">
-              I'm a full-stack software engineer who thrives from creating new
+              I&apos;m a full-stack software engineer who thrives from creating new
               ideas and constantly learning new things.
             </div>
           </div>

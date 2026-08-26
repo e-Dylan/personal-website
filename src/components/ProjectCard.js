@@ -1,8 +1,8 @@
+"use client";
+
 import React, { createContext, useContext } from "react";
 
 import { ProjectContext } from "../contexts/ProjectContext";
-
-import $ from "jquery";
 
 import ProjectDisplay from "../components/ProjectDisplay";
 
@@ -35,12 +35,6 @@ export const hideProjectDisplay = () => {
   bg.classList.add("hidden");
   display.classList.add("hidden");
 };
-
-$(document).mouseup((e) => {
-  var displayBg = $(".project-display-bg");
-  // if target isnt in display window:
-  if (displayBg.is(e.target)) hideProjectDisplay();
-});
 
 function ProjectCard({ project }) {
   const { value, setValue } = useContext(ProjectContext);
