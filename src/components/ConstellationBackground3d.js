@@ -9,9 +9,9 @@ function ConstellationBackground3d({ children }) {
     const container = containerRef.current;
     const mount = mountRef.current;
 
-    const PARTICLE_COUNT = 90;
-    const LINK_DISTANCE = 2.0;
-    const FIELD_SIZE = 8;
+    const PARTICLE_COUNT = 120;
+    const LINK_DISTANCE = 2.5;
+    const FIELD_SIZE = 15;
     const FPS_CAP = 30;
     const frameInterval = 1000 / FPS_CAP;
 
@@ -102,7 +102,7 @@ function ConstellationBackground3d({ children }) {
       }
       posAttr.needsUpdate = true;
 
-      // rebuild line segments between nearby particles — O(n²) but n=90, trivial at 30fps
+      // rebuild line segments between nearby particles — O(n^2) but n=90, trivial at 30fps
       let lineIdx = 0;
       const arr = posAttr.array;
       for (let i = 0; i < PARTICLE_COUNT && lineIdx < maxLines; i++) {
@@ -127,8 +127,8 @@ function ConstellationBackground3d({ children }) {
       lineGeo.setDrawRange(0, lineIdx * 2);
 
       // slow auto-rotation — this is what makes it read as "3D" rather than a flat field
-      group.rotation.y += 0.0006;
-      group.rotation.x += 0.0002;
+      group.rotation.y += 0.0016;
+      group.rotation.x += 0.0012;
 
       renderer.render(scene, camera);
     }

@@ -15,7 +15,7 @@ function ConstellationBackground({ children }) {
     let running = true;
 
     const PARTICLE_COUNT = 100; // tune density here
-    const LINK_DISTANCE = 130; // px before a line stops drawing
+    const LINK_DISTANCE = 120; // px before a line stops drawing
     const SPEED = 1.5; // px per frame, keep slow
     const FPS_CAP = 30;
     const frameInterval = 1000 / FPS_CAP;
@@ -73,7 +73,7 @@ function ConstellationBackground({ children }) {
             ctx.moveTo(a.x, a.y);
             ctx.lineTo(b.x, b.y);
             ctx.strokeStyle = `rgba(140, 170, 255, ${0.25 * (1 - dist / LINK_DISTANCE)})`;
-            ctx.lineWidth = 1;
+            ctx.lineWidth = 2;
             ctx.stroke();
           }
         }
