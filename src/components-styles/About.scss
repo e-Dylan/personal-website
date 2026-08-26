@@ -223,6 +223,7 @@
     border: 1px solid $border-subtle;
     border-radius: 20px;
     transition: all 180ms ease-in-out;
+    cursor: pointer;
 
     &:hover {
       color: $text-highlight;
