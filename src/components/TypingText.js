@@ -76,7 +76,7 @@ function TypingText() {
 
   return (
     <>
-      {wordIdxRef.current === 4 ? (
+      {WORDS[wordIdxRef.current] === "n innovator." ? (
         <span className="typed-text highlight">{text}</span>
       ) : (
         <span className="typed-text highlight">&nbsp;{text}</span>
