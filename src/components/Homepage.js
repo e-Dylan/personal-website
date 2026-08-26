@@ -87,8 +87,8 @@ function Homepage() {
           </div>
         </section>
       </ConstellationBackground>
-
-      {/* <section className="navbar-section">
+      {/* 
+      <section className="navbar-section">
         <Nav />
       </section>
 

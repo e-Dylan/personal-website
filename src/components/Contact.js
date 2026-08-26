@@ -21,7 +21,7 @@ const Contact = () => {
         xmlns="http://www.w3.org/2000/svg"
         className="svgcolor-light"
       >
-        <path d="M0 0 L50 100 L100 0 Z" fill="white" stroke="white"></path>
+        <path d="M0 0 L50 100 L100 0 Z" fill="#0a0e1a" stroke="#0a0e1a"></path>
       </svg>
       <div className="container-center">
         <div className="section-title" id="contact-section-title">

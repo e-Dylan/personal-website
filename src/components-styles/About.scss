@@ -1,7 +1,8 @@
 @import "variables";
 
 .about-me-card {
-  background-color: $white;
+  background-color: $navy-600;
+  border: 1px solid $border-subtle;
   width: 33%;
   max-width: 300px;
   height: auto;
@@ -9,7 +10,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  box-shadow: 0px 0px 6px 6px rgba(15, 15, 15, 0.15);
+  box-shadow: 0 0 30px rgba($accent-purple, 0.18);
   // transform: translateX(-200%);
   // opacity: 0;
   border-radius: 4px;
@@ -39,6 +40,7 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
+    border-radius: 50%;
   }
 }
 
@@ -183,7 +185,7 @@
         margin: 0 0 15px 0;
         font-size: 11pt;
 
-        color: $navy-400;
+        color: $text-secondary;
         position: relative;
         background-color: $gray-200;
         align-items: flex-end;
@@ -221,7 +223,7 @@
         .level-tag-highlight {
           margin-right: 10px;
           z-index: 1337;
-          color: $gray-200;
+          color: $text-primary;
         }
       }
     }

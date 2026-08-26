@@ -1,29 +1,40 @@
-// Shared color palette for all components except Homepage (which keeps its own scheme).
-// Anchored to the navy + rose tones already established on Homepage so the rest of
-// the site reads as one consistent system instead of six slightly-different pinks.
+// Shared color palette for Nav / About / Projects / Contact.
+// Anchored to the constellation hero's deep-space theme (navy void +
+// blue/purple/cyan gradient + lavender text) so the rest of the site reads
+// as a continuation of the same scene instead of a separate light theme.
+// Homepage.scss (the hero itself) is untouched and keeps its own literals —
+// these tokens are pulled from the same values so everything still matches.
 
-// Navy / ink (dark backgrounds & dark text)
-$navy-900: #14161f; // deepest panels (nested cards inside dark sections)
-$navy-800: #1a1e2b; // Contact section background
-$navy-700: #262a3b; // Nav background
-$navy-600: #323849; // mid navy — matches Homepage's icon/text color
-$navy-500: #4b5268; // slate — secondary dark accents, hover states
-$navy-400: #6b7280; // muted navy-gray — secondary text, borders
+// Space / panel backgrounds (built outward from the constellation's #0a0e1a base)
+$navy-900: #0a0e1a; // void — exact match to constellation-bg base
+$navy-800: #12172a; // section backgrounds, modal panels
+$navy-700: #171c30; // Nav background
+$navy-600: #1c2238; // raised panel background (cards, portrait column)
+$navy-500: #545b78; // secondary dark accents, hover states
+$navy-400: #8892ab; // muted text / borders on dark panels
 
-// Rose / accent (unifies the previous six near-identical pinks)
-$rose-600: #c81e56; // deep accent
-$rose-500: #db2f68; // primary accent — buttons, links, highlights
-$rose-400: #e8577f; // hover / lighter accent
-$rose-300: #f2a4bb; // subtle tags, light hover backgrounds
+// Accent trio, lifted from the constellation gradient
+$accent-blue: #4f6df5;
+$accent-purple: #9b5de5;
+$accent-cyan: #00a5c2;
+
+// Rose kept as the site's primary-accent alias, repointed to the hero's highlight pink/purple
+$rose-600: #9c3fb8; // deep accent
+$rose-500: #e066d6; // primary accent — buttons, links, highlights (= $text-highlight)
+$rose-400: #ea82dc; // hover / lighter accent
+$rose-300: #cf9be0; // subtle tags, light hover backgrounds
 
 // Neutrals
 $white: #ffffff;
 $off-white: #f7f7f9;
-$ink: #1f2430; // body text on light backgrounds
-$gray-400: #9296a1;
-$gray-200: #e4e4e8;
+$ink: #f1ecfa; // body text color on the site's dark panels (repointed from dark-on-light)
+$gray-400: #8892ab;
+$gray-200: #262c48; // subtle borders / track backgrounds on dark panels
 
 $text-primary: #F1ECFA;    /* regular body text */
 $text-secondary: #A8AEC4;  /* muted/secondary text, e.g. captions */
 $text-highlight: #E066D6;  /* highlighted/accent text */
 $text-highlight-dim: #B04FA8; /* dimmed version of highlight text, e.g. for hover states */
+
+$border-subtle: rgba(168, 174, 196, 0.14);
+$border-glow: rgba(140, 170, 255, 0.35);

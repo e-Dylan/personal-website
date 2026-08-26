@@ -19,8 +19,9 @@
   max-width: 1500px;
   max-height: 800px;
   pointer-events: auto;
-  background-color: $white;
-  box-shadow: 0px 0px 12px 12px rgba(15, 15, 15, 0.2);
+  background-color: $navy-800;
+  border: 1px solid $border-subtle;
+  box-shadow: 0 0 60px rgba($accent-purple, 0.25);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
