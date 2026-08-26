@@ -1,46 +1,235 @@
 @import "variables";
 
-.about-me-card {
-  background-color: $navy-600;
-  border: 1px solid $border-subtle;
-  width: 33%;
-  max-width: 300px;
-  height: auto;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 0 30px rgba($accent-purple, 0.18);
-  // transform: translateX(-200%);
-  // opacity: 0;
-  border-radius: 4px;
+.about-section {
+  position: relative;
+  width: 100%;
+  padding: 90px 0 60px 0;
+  background: radial-gradient(
+      circle at 15% 10%,
+      rgba($accent-purple, 0.14),
+      transparent 45%
+    ),
+    radial-gradient(circle at 85% 90%, rgba($accent-cyan, 0.12), transparent 50%),
+    $navy-900;
+  overflow: hidden;
 }
 
-.about-me-container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+.section-title {
+  padding-bottom: 30px;
+  width: 100%;
+  text-align: center;
+
+  > div:first-child {
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: $text-primary;
+  }
+
+  .section-title-underline {
+    width: 70px;
+    height: 3px;
+    margin: 14px auto 0 auto;
+    border-radius: 2px;
+    background: linear-gradient(
+      90deg,
+      rgba(white, 0.5),
+      rgba(white, 0.5),
+      rgba(white, 0.5)
+    );
+  }
 }
 
 .about-icons {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  gap: 20px;
   width: 100%;
-  margin-bottom: 65px;
+  margin-bottom: 60px;
 }
 
 .icon-wrapper {
-  margin: 0;
-  width: auto;
-  justify-content: center;
-  height: auto;
+  flex: 1;
+  padding: 24px 16px;
+  background: rgba($navy-600, 0.5);
+  border: 1px solid $border-subtle;
+  border-radius: 8px;
+  transition: transform 200ms ease-in-out, box-shadow 200ms ease-in-out,
+    border-color 200ms ease-in-out;
+
   img {
-    width: 60%;
+    width: 52px;
+    height: 52px;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto 14px auto;
     border-radius: 50%;
+  }
+
+  &:hover {
+    transform: translateY(-6px);
+    border-color: rgba($accent-purple, 0.5);
+    box-shadow: 0 10px 30px rgba($accent-purple, 0.2);
+  }
+}
+
+.icon-title,
+.icon-subtitle {
+  text-align: center;
+}
+
+.icon-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: $text-primary;
+}
+
+.icon-subtitle {
+  font-size: 12.5px;
+  font-weight: normal;
+  color: $text-secondary;
+  margin-top: 6px;
+  line-height: 1.4;
+}
+
+.about-me-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.about-me-card {
+  background-color: $navy-600;
+  border: 1px solid $border-subtle;
+  width: 32%;
+  max-width: 320px;
+  flex-shrink: 0;
+  box-shadow: 0 0 30px rgba($accent-purple, 0.15);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.portrait-column {
+  width: 100%;
+  height: 100%;
+  background: $navy-800;
+
+  img {
+    width: 100%;
+    display: block;
+    border-bottom: 1px solid $border-subtle;
+  }
+
+  .portrait-about-me-title {
+    color: $text-primary;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-top: 18px;
+  }
+
+  .portrait-about-me {
+    width: 88%;
+    color: $text-secondary;
+    padding: 12px;
+    margin: auto;
+    font-size: 14.5px;
+    line-height: 1.6;
+    text-align: center;
+  }
+}
+
+.about-me-topics {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 40px;
+}
+
+.technologies-languages-title,
+.skills-title {
+  width: 100%;
+  color: $off-white;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 18px;
+}
+
+.technologies-languages {
+  display: flex;
+  flex-direction: column;
+}
+
+.language-bars {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  .bar {
+    width: 100%;
+    height: 1.5rem;
+    margin: 0 0 16px 0;
+    font-size: 11pt;
+    color: $text-secondary;
+    position: relative;
+    background-color: $gray-200;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+
+    .bar-filled {
+      background: linear-gradient(90deg, $accent-blue, $rose-500);
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      border-radius: 3px;
+      display: flex;
+      align-items: center;
+      transition: width 900ms ease-in-out;
+    }
+
+    .lang-tag {
+      color: $white;
+      font-size: 12.5px;
+      font-weight: 600;
+      margin-left: 12px;
+      white-space: nowrap;
+    }
+
+    .level-tag,
+    .level-tag-highlight {
+      position: absolute;
+      right: 12px;
+      font-size: 11.5px;
+      color: rgba($white, 0.85);
+    }
+  }
+}
+
+.skills-tags {
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .tag {
+    padding: 7px 14px;
+    font-size: 12.5px;
+    color: $text-secondary;
+    background: rgba($navy-600, 0.6);
+    border: 1px solid $border-subtle;
+    border-radius: 20px;
+    transition: all 180ms ease-in-out;
+
+    &:hover {
+      color: $text-highlight;
+      border-color: rgba($accent-purple, 0.6);
+      box-shadow: 0 0 14px rgba($accent-purple, 0.25);
+      transform: translateY(-2px);
+    }
   }
 }
 
@@ -49,271 +238,32 @@
     flex-wrap: wrap;
   }
   .icon-wrapper {
-    img {
-      width: 60%;
-    }
-  }
-  .container-center {
-    padding: 20px;
+    flex: 1 1 40%;
   }
 }
 
-.icon-title,
-.icon-subtitle {
-  text-align: center;
-}
-.icon-title {
-  font-size: 18px;
-  font-weight: 600;
-}
-
-.icon-subtitle {
-  font-size: 15px;
-  font-weight: normal;
-}
-
-@media screen and (max-width: 2000px) {
+@media screen and (max-width: 900px) {
   .about-me-container {
-    padding: 0 100px;
-  }
-}
-
-@media screen and (max-width: 1600px) {
-  .about-me-container {
-    padding: 0 100px;
-  }
-}
-
-@media screen and (max-width: 1300px) {
-  .about-me-container {
-    padding: 0 40px;
-  }
-}
-
-@media screen and (max-width: 1000px) {
-  .about-me-container {
-    padding: 0 20px;
-  }
-}
-
-.portrait-column {
-  padding: 0px;
-  width: 100%;
-  background: $navy-800;
-  border-radius: 4px;
-  img {
-    width: 100%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 4px 4px 0 0;
-  }
-  .portrait-about-me-title {
-    color: $white;
-    text-align: center;
-    margin-top: 10px;
-  }
-  .portrait-about-me {
-    width: 90%;
-    color: rgba($white, 0.72);
-    margin: 15px;
-    font-size: 15px;
-    text-align: center;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .about-icons {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 100%;
-  }
-
-  .icon-wrapper {
-    margin: 2rem 0;
-    // width: auto;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    img {
-      width: 20%;
-    }
-  }
-}
-
-.about-description {
-  font-size: 16px;
-  padding-top: 40px;
-  text-align: center;
-}
-
-.about-me-topics {
-  display: flex;
-  flex-direction: column;
-  width: 60%;
-  margin: 0 5%;
-
-  .technologies-languages-title,
-  .skills-title {
-    text-align: flex-start;
-    width: 100%;
-    color: $rose-500;
-    font-weight: bold;
-  }
-
-  .technologies-languages {
-    display: flex;
     flex-direction: column;
     align-items: center;
-
-    .language-bars {
-      margin: 10px 10px;
-      align-items: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      width: 100%;
-
-      .bar {
-        width: 100%;
-        height: 1.4rem;
-        margin: 0 0 15px 0;
-        font-size: 11pt;
-
-        color: $text-secondary;
-        position: relative;
-        background-color: $gray-200;
-        align-items: flex-end;
-        // display: none;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-
-        .bar-filled {
-          background-color: $rose-500;
-          height: 100%;
-          position: absolute;
-          align-self: flex-start;
-
-          .lang-tag {
-            position: absolute;
-            top: 0;
-            left: 0;
-            background-color: $rose-400;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            width: 90px;
-            color: $white;
-          }
-        }
-
-        .level-tag {
-          // width: 20%;
-          margin-right: 10px;
-          z-index: 1337;
-        }
-        .level-tag-highlight {
-          margin-right: 10px;
-          z-index: 1337;
-          color: $text-primary;
-        }
-      }
-    }
   }
-
-  .skills {
-    .skills-items {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      margin: 10px 0;
-      text-transform: uppercase;
-      font-family: "Ubuntu", sans-serif;
-      width: 100%;
-      height: 100%;
-      padding: 15px;
-      border: 2px solid $gray-400;
-      border-radius: 5px;
-      font-size: 10pt;
-
-      .skill-item {
-        // display: flex;
-        // flex-direction: column;
-        align-self: center;
-        border-radius: 3px;
-        margin: 5px;
-        padding: 4px;
-        background-color: $rose-500;
-        color: $white;
-        transition: 200ms background-color ease-in-out;
-        box-shadow: 0px 0px 12px 4px rgba(15, 15, 15, 0.2);
-        // transform: translateY(-200%);
-        // opacity: 0;
-
-        &:hover {
-          transform: scale(1.07);
-          cursor: default;
-          background-color: $rose-300;
-        }
-      }
-    }
+  .about-me-card {
+    width: 100%;
+    max-width: 360px;
+  }
+  .about-me-topics {
+    width: 100%;
   }
 }
 
 @media screen and (max-width: 768px) {
-  .about-me-container {
+  .about-section {
+    padding: 70px 0 50px 0;
+  }
+  .about-icons {
     flex-direction: column;
   }
-
-  .about-me-card {
-    align-self: center;
-    width: 90%;
-  }
-
-  .about-me-topics {
-    align-self: center;
-    margin-top: 20px;
-    width: 90%;
-  }
-}
-
-// ABOUT SECTION ANIMATIONS
-
-@keyframes aboutFadeFromLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-200%);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0%);
-  }
-}
-@keyframes aboutFadeFromRight {
-  from {
-    opacity: 0;
-    transform: translateX(200%);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0%);
-  }
-}
-@keyframes aboutFadeFromTop {
-  from {
-    opacity: 0;
-    transform: translateY(-500%);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0%);
+  .icon-wrapper {
+    margin: 0;
   }
 }

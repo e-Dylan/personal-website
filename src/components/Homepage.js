@@ -8,16 +8,9 @@ import "aos/dist/aos.css";
 import TypingText from "./TypingText";
 
 import "../components-styles/Homepage.scss";
-import "../components-styles/About.scss";
-import "../components-styles/Projects.scss";
 
 import ConstellationBackground from "./ConstellationBackground";
 // import ConstellationBackground3d from "./ConstellationBackground3d";
-
-import Nav from "../components/Nav";
-import About from "../components/About";
-import Projects from "../components/Projects";
-import Contact from "../components/Contact";
 
 const linkedinIcon = "/resources/social-icons/linkedin.svg";
 const githubIcon = "/resources/social-icons/github.svg";
@@ -39,6 +32,10 @@ function Homepage() {
     });
     AOS.refresh();
   }, []);
+
+  const scrollToAbout = () => {
+    document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <div className="homepage">
@@ -85,30 +82,33 @@ function Homepage() {
                 </a>
               </div>
             </div>
-            {/* <ProjectDisplay /> testing */}
           </div>
+
+          <button
+            type="button"
+            className="scroll-down-arrow"
+            aria-label="Scroll down to About Me section"
+            onClick={scrollToAbout}
+          >
+            <span className="scroll-down-arrow__ring" />
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M4 9L12 17L20 9"
+                stroke="currentColor"
+                strokeWidth="2.4"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </button>
         </section>
       </ConstellationBackground>
-      {/* 
-      <section className="navbar-section">
-        <Nav />
-      </section>
-
-      <section className="about-section">
-        <About />
-      </section>
-
-      <section className="projects-section">
-        <Projects />
-      </section>
-
-      <section className="contact-section">
-        <Contact />
-      </section>
-
-      <section className="footer">
-        <div className="footer"></div>
-      </section> */}
     </div>
   );
 }

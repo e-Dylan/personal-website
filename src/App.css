@@ -1,6 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body,
 html,
 #root,
@@ -17,6 +23,7 @@ html,
 html {
   overflow: scroll;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 ::-webkit-scrollbar {
   width: 0px; /* Remove scrollbar space */
@@ -28,4 +35,16 @@ html {
   max-width: 1600px;
   width: 100%;
   padding: 0 100px 60px 100px;
+}
+
+@media screen and (max-width: 1300px) {
+  .container-center {
+    padding: 0 40px 60px 40px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container-center {
+    padding: 0 20px 40px 20px;
+  }
 }
