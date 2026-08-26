@@ -7,7 +7,7 @@ const SITE_DESCRIPTION =
   "This is a professional portfolio of my creative work and programming projects.";
 
 export const viewport = {
-  themeColor: "#000000",
+  themeColor: "#0a0e1a",
   width: "device-width",
   initialScale: 1,
 };
