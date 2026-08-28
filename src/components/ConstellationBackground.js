@@ -26,8 +26,8 @@ function ConstellationBackground({ children }) {
     let lastFrame = 0;
 
     const STAR_COUNT = 500; // tune star density here
-    const STAR_MIN_RADIUS = 0.05;
-    const STAR_MAX_RADIUS = 0.5;
+    const STAR_MIN_RADIUS = 0.075;
+    const STAR_MAX_RADIUS = 0.65;
 
     function resize() {
       dpr = Math.min(window.devicePixelRatio || 1, 1.5); // cap DPR like before
