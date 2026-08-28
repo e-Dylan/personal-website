@@ -18,7 +18,10 @@ function ConstellationBackground({ children }) {
     let rafId = null;
     let running = true;
 
-    const PARTICLE_COUNT = 100; // tune density here
+    const MOBILE_BREAKPOINT = 768;
+
+    const PARTICLE_COUNT = 100; // tune density
+    const PARTICLE_COUNT_MOBILE = PARTICLE_COUNT / 3;
     const LINK_DISTANCE = 120; // px before a line stops drawing
     const SPEED = 1.5; // px per frame, keep slow
     const FPS_CAP = 30;
@@ -67,8 +70,15 @@ function ConstellationBackground({ children }) {
       starsCtx.shadowColor = "transparent";
     }
 
+    function getParticleCount() {
+      return width <= MOBILE_BREAKPOINT
+        ? PARTICLE_COUNT_MOBILE
+        : PARTICLE_COUNT;
+    }
+
     function initParticles() {
-      particles = Array.from({ length: PARTICLE_COUNT }, () => ({
+      let count = getParticleCount();
+      particles = Array.from({ length: count }, () => ({
         x: Math.random() * width,
         y: Math.random() * height,
         vx: (Math.random() - 0.5) * SPEED,
