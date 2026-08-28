@@ -4,13 +4,17 @@ import { useEffect, useRef } from "react";
 
 function ConstellationBackground({ children }) {
   const canvasRef = useRef(null);
+  const starsCanvasRef = useRef(null);
   const containerRef = useRef(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
+    const starsCanvas = starsCanvasRef.current;
+    const starsCtx = starsCanvas.getContext("2d");
     let width, height, dpr;
     let particles = [];
+    let stars = [];
     let rafId = null;
     let running = true;
 
@@ -21,6 +25,10 @@ function ConstellationBackground({ children }) {
     const frameInterval = 1000 / FPS_CAP;
     let lastFrame = 0;
 
+    const STAR_COUNT = 500; // tune star density here
+    const STAR_MIN_RADIUS = 0.1;
+    const STAR_MAX_RADIUS = 0.75;
+
     function resize() {
       dpr = Math.min(window.devicePixelRatio || 1, 1.5); // cap DPR like before
       width = canvas.clientWidth;
@@ -28,6 +36,35 @@ function ConstellationBackground({ children }) {
       canvas.width = width * dpr;
       canvas.height = height * dpr;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+      starsCanvas.width = width * dpr;
+      starsCanvas.height = height * dpr;
+      starsCtx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+
+    function initStars() {
+      stars = Array.from({ length: STAR_COUNT }, () => ({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        r:
+          STAR_MIN_RADIUS + Math.random() * (STAR_MAX_RADIUS - STAR_MIN_RADIUS),
+        // alpha: 0.25 + Math.random() * 0.65,
+        alpha: 1.0,
+      }));
+    }
+
+    function drawStars() {
+      starsCtx.clearRect(0, 0, width, height);
+      for (const s of stars) {
+        starsCtx.beginPath();
+        starsCtx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+        starsCtx.fillStyle = `rgba(255, 255, 255, ${s.alpha})`;
+        starsCtx.shadowColor = "rgba(255, 255, 255, 0.8)";
+        starsCtx.shadowBlur = s.r * 4;
+        starsCtx.fill();
+      }
+      starsCtx.shadowBlur = 0;
+      starsCtx.shadowColor = "transparent";
     }
 
     function initParticles() {
@@ -81,11 +118,15 @@ function ConstellationBackground({ children }) {
     }
 
     resize();
+    initStars();
+    drawStars();
     initParticles();
     rafId = requestAnimationFrame(step);
 
     const handleResize = () => {
       resize();
+      initStars();
+      drawStars();
       initParticles();
     };
     window.addEventListener("resize", handleResize);
@@ -115,6 +156,7 @@ function ConstellationBackground({ children }) {
   return (
     <div ref={containerRef} className="constellation-bg">
       <div className="constellation-bg__gradient" />
+      <canvas ref={starsCanvasRef} className="constellation-bg__stars" />
       <canvas ref={canvasRef} className="constellation-bg__canvas" />
       <div className="constellation-bg__content">{children}</div>
     </div>

@@ -38,7 +38,9 @@
   padding: 0;
   z-index: 3;
   animation: arrowBob 2.2s ease-in-out infinite;
-  transition: border-color 200ms ease-in-out, box-shadow 200ms ease-in-out,
+  transition:
+    border-color 200ms ease-in-out,
+    box-shadow 200ms ease-in-out,
     transform 200ms ease-in-out;
 
   svg {
@@ -284,21 +286,48 @@
   inset: 0;
   z-index: 0;
   background:
-    radial-gradient(circle at 20% 20%, rgba(79, 109, 245, 0.35), transparent 45%),
-    radial-gradient(circle at 80% 30%, rgba(155, 93, 229, 0.3), transparent 45%),
-    radial-gradient(circle at 50% 80%, rgba(0, 165, 194, 0.25), transparent 50%),
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(79, 109, 245, 0.35),
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at 80% 30%,
+      rgba(155, 93, 229, 0.3),
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at 50% 80%,
+      rgba(0, 165, 194, 0.25),
+      transparent 50%
+    ),
     #0a0e1a;
   background-size: 200% 200%;
   animation: gradientDrift 24s ease-in-out infinite;
 }
 
 @keyframes gradientDrift {
-  0%   { background-position: 0% 0%, 100% 0%, 50% 100%; }
-  50%  { background-position: 30% 40%, 70% 60%, 40% 60%; }
-  100% { background-position: 0% 0%, 100% 0%, 50% 100%; }
+  0% {
+    background-position:
+      0% 0%,
+      100% 0%,
+      50% 100%;
+  }
+  50% {
+    background-position:
+      30% 40%,
+      70% 60%,
+      40% 60%;
+  }
+  100% {
+    background-position:
+      0% 0%,
+      100% 0%,
+      50% 100%;
+  }
 }
 
-.constellation-bg__canvas {
+.constellation-bg__stars {
   position: absolute;
   inset: 0;
   z-index: 1;
@@ -307,15 +336,25 @@
   display: block;
 }
 
+.constellation-bg__canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
 .constellation-bg__content {
   position: relative;
-  z-index: 2;
+  z-index: 3;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .constellation-bg__gradient { animation: none; }
+  .constellation-bg__gradient {
+    animation: none;
+  }
 }
-
 
 // FOR 3D
 
